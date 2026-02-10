@@ -175,16 +175,12 @@ function HUDBar() {
           >
             COVERAGE:
           </span>
-          {["NAPLES", "ORLANDO", "MIAMI", "TAMPA"].map((city, i) => (
-            <span
-              key={city}
-              className="text-[10px] tracking-[0.2em] text-white/55 uppercase"
-              style={{ fontFamily: "var(--font-orbitron), monospace" }}
-            >
-              {i > 0 && <span className="mx-1 text-white/20">•</span>}
-              {city}
-            </span>
-          ))}
+          <span
+            className="text-[10px] tracking-[0.2em] text-white/55 uppercase"
+            style={{ fontFamily: "var(--font-orbitron), monospace" }}
+          >
+            FLORIDA STATEWIDE
+          </span>
         </div>
 
         {/* Live agents */}
