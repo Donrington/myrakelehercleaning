@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Shield, Home, Star, Droplets, HardHat, Sparkles } from "lucide-react";
+import { Shield, Home, Star, Droplets, Wind, Sparkles, HardHat } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -185,34 +185,34 @@ export default function ServicesSection() {
             <div className="relative z-10 flex h-full flex-col justify-between">
               <div>
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#55A53B]/10 px-3 py-1">
-                  <HardHat className="h-4 w-4 text-[#55A53B]" />
+                  <Wind className="h-4 w-4 text-[#55A53B]" />
                   <span className="text-xs font-semibold tracking-wide text-[#55A53B] uppercase">
                     Flagship Service
                   </span>
                 </div>
 
                 <h3 className="mb-4 text-3xl font-bold leading-tight text-[#f2f2f2] lg:text-5xl">
-                  Post Construction
+                  Sanctuary
                   <br />
-                  Cleaning
+                  Restoration
                 </h3>
 
                 <p className="mb-6 max-w-lg text-base leading-relaxed text-[#a0a0a0] lg:text-lg">
-                  Remove dust, paint residue, debris, and chemical deposits left
-                  by contractors. We transform raw construction into a liveable,
-                  breathable space — polished and ready for occupancy.
+                  Erase the humidity. Reset the atmosphere. A home that breathes
+                  as deeply as you do. Our flagship deep purification protocol
+                  removes allergens, mold, and environmental stress.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 <span className="rounded-full border border-[#55A53B]/20 bg-[#55A53B]/5 px-4 py-2 text-sm text-[#55A53B]">
-                  Debris Removal
+                  HEPA-13 Filtration
                 </span>
                 <span className="rounded-full border border-[#55A53B]/20 bg-[#55A53B]/5 px-4 py-2 text-sm text-[#55A53B]">
-                  Surface Decontamination
+                  Humidity Control
                 </span>
                 <span className="rounded-full border border-[#55A53B]/20 bg-[#55A53B]/5 px-4 py-2 text-sm text-[#55A53B]">
-                  Final Inspection Ready
+                  Allergen Removal
                 </span>
               </div>
             </div>
@@ -317,7 +317,7 @@ export default function ServicesSection() {
                 Perfect Rating
               </p>
               <p className="text-xs text-[#a0a0a0]">
-                500+ Google Reviews
+                Trusted Across Florida
               </p>
             </div>
           </div>
@@ -371,7 +371,36 @@ export default function ServicesSection() {
         </div>
 
         {/* Additional Services Grid */}
-        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-6">
+        <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          {/* Post Construction Cleaning */}
+          <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px]">
+            <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+              <div className="border-sweep absolute inset-0 rounded-3xl" />
+            </div>
+
+            <div className="relative z-10">
+              <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#55A53B]/10 px-3 py-1">
+                <HardHat className="h-3.5 w-3.5 text-[#55A53B]" />
+                <span className="text-xs font-semibold tracking-wide text-[#55A53B] uppercase">
+                  Construction
+                </span>
+              </div>
+              <h4 className="mb-2 text-lg font-bold text-[#f2f2f2]">
+                Post Construction Cleaning
+              </h4>
+              <p className="mb-3 text-sm leading-relaxed text-[#a0a0a0]">
+                Remove dust, paint residue, debris, and chemical deposits left by contractors — polished and ready for occupancy.
+              </p>
+              <div className="flex flex-wrap gap-1.5 text-xs text-[#55A53B]">
+                <span>Debris Removal</span>
+                <span className="text-white/20">•</span>
+                <span>Surface Decontamination</span>
+                <span className="text-white/20">•</span>
+                <span>Final Inspection Ready</span>
+              </div>
+            </div>
+          </div>
+
           {/* Carpet Cleaning */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px]">
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">

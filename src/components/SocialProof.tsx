@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 
-const locations = ["Naples", "Orlando", "Miami", "Tampa"];
+const locations = ["Florida Statewide"];
 
 export default function SocialProof() {
   return (
@@ -15,7 +15,7 @@ export default function SocialProof() {
     >
       <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 sm:flex-row sm:justify-between">
         <span className="text-sm font-medium tracking-wide text-white/40 uppercase">
-          Trusted by homeowners in
+          Serving clients across
         </span>
 
         <div className="flex flex-wrap items-center justify-center gap-6 sm:gap-10">
