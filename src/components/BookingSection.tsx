@@ -326,7 +326,8 @@ export default function BookingSection() {
 
   useEffect(() => {
     let raf: number;
-    let renderer: ReturnType<typeof import("three")["WebGLRenderer"]["prototype"]["constructor"]> | null = null;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    let renderer: any = null;
 
     const boot = async () => {
       const THREE = await import("three");
