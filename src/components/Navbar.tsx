@@ -14,10 +14,10 @@ import { Menu, X, ArrowUpRight } from "lucide-react";
 // Nav links config
 // ─────────────────────────────────────────────────────────────────────────────
 const navLinks = [
-  { label: "How it works", href: "#how-it-works" },
-  { label: "Services",     href: "#services"     },
-  { label: "Reviews",      href: "#reviews"      },
-  { label: "Pricing",      href: "#pricing"      },
+  { label: "About",    href: "#about"    },
+  { label: "Services", href: "#services" },
+  { label: "Process",  href: "#process"  },
+  { label: "Reviews",  href: "#evidence" },
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────

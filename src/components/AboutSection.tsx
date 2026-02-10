@@ -273,7 +273,7 @@ export default function AboutSection() {
   );
 
   return (
-    <section ref={sectionRef} className="relative bg-white">
+    <section id="about" ref={sectionRef} className="relative overflow-hidden bg-white">
 
       {/* ── Headline ── */}
       <div

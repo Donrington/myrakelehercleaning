@@ -101,6 +101,7 @@ export default function ServicesSection() {
 
   return (
     <section
+      id="services"
       ref={sectionRef}
       className="relative overflow-hidden bg-[#050505]"
     >
