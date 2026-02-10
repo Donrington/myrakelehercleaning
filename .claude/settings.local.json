@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(xcopy \"c:\\\\Users\\\\Windows\\\\Desktop\\\\MyProjects\\\\myrakeheler-temp\\\\*\" \"c:\\\\Users\\\\Windows\\\\Desktop\\\\MyProjects\\\\myrakeheler\"\" /E /Y /I 2>&1 && rmdir /S /Q \"c:UsersWindowsDesktopMyProjectsmyrakeheler-temp \")",
+      "Bash(xcopy:*)",
+      "Bash(powershell:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm run dev:*)",
+      "Bash(dir:*)",
+      "Bash(node -e:*)"
+    ]
+  }
+}

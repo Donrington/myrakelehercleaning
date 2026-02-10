@@ -1,26 +1,48 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f5f5f5;
+  --foreground: #121212;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-body: var(--font-epilogue);
+  --font-heading: var(--font-geist);
+  --font-subheading: var(--font-libre-baskerville);
+  --font-tech: var(--font-orbitron);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-epilogue), system-ui, -apple-system, sans-serif;
+}
+
+/* Font Hierarchy */
+h1, h2, h3 {
+  font-family: var(--font-geist), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+h4, h5, h6 {
+  font-family: var(--font-libre-baskerville), serif;
+}
+
+/* Special tech elements */
+.tech-display {
+  font-family: var(--font-orbitron), monospace;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Selection color matching brand green */
+::selection {
+  background-color: rgba(46, 204, 113, 0.2);
+  color: #121212;
 }
