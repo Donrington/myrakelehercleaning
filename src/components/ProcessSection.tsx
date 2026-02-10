@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import {
   useScroll,
   useTransform,
@@ -110,14 +111,14 @@ export default function ProcessSection() {
               {/* ── Left: LiDAR Scan ── */}
               <div className="relative w-full md:w-1/2 overflow-hidden order-2 md:order-1 h-[55%] md:h-full">
                 {/* Base greyscale image */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: "url('/images/livingreoomassess.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    filter: "grayscale(1) contrast(1.15)",
-                  }}
+                <Image
+                  src="/images/livingreoomassess.png"
+                  alt=""
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                  style={{ filter: "grayscale(1) contrast(1.15)" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
 
                 {/* Scanned region above laser — inverted/high contrast */}
@@ -253,14 +254,14 @@ export default function ProcessSection() {
               {/* ── Left: Laser Scan ── */}
               <div className="relative w-full md:w-1/2 overflow-hidden order-2 md:order-1 h-[55%] md:h-full">
                 {/* Base greyscale image */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: "url('/images/bathcleaning.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    filter: "grayscale(1) contrast(1.15)",
-                  }}
+                <Image
+                  src="/images/bathcleaning.png"
+                  alt=""
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                  style={{ filter: "grayscale(1) contrast(1.15)" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
 
                 {/* Scanned region — full-colour reveal grows from top */}
@@ -399,14 +400,14 @@ export default function ProcessSection() {
               {/* ── Left: Laser Scan ── */}
               <div className="relative w-full md:w-1/2 overflow-hidden order-2 md:order-1 h-[55%] md:h-full">
                 {/* Base greyscale image */}
-                <div
-                  className="absolute inset-0"
-                  style={{
-                    backgroundImage: "url('/images/cleaningroom.png')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    filter: "grayscale(1) contrast(1.15)",
-                  }}
+                <Image
+                  src="/images/cleaningroom.png"
+                  alt=""
+                  fill
+                  loading="lazy"
+                  className="object-cover"
+                  style={{ filter: "grayscale(1) contrast(1.15)" }}
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
 
                 {/* Scanned region — full-colour reveal grows from top */}

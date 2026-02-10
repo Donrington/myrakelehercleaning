@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -104,16 +105,16 @@ export default function ServicesSection() {
       className="relative overflow-hidden bg-[#050505]"
     >
       {/* Background Image Layer */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: "url('/images/bath2.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          opacity: 0.35,
-        }}
-      />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/images/bath2.png"
+          alt=""
+          fill
+          loading="lazy"
+          className="object-cover opacity-35"
+          sizes="100vw"
+        />
+      </div>
 
       {/* Dark Overlay to maintain readability */}
       <div className="absolute inset-0 z-1 bg-gradient-to-b from-[#050505]/85 via-[#050505]/75 to-[#050505]/85" />

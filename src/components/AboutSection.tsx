@@ -309,6 +309,7 @@ export default function AboutSection() {
                 fill
                 priority
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
 
@@ -318,7 +319,9 @@ export default function AboutSection() {
                 src="/images/home2.png"
                 alt="Deep clean"
                 fill
+                loading="lazy"
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
 
@@ -328,7 +331,9 @@ export default function AboutSection() {
                 src="/images/home3.png"
                 alt="Eco friendly"
                 fill
+                loading="lazy"
                 className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
 
