@@ -68,9 +68,9 @@ export default function ProcessSection() {
   const laserY3 = useTransform(scrollYProgress, [0.667, 1.0  ], ["0%", "100%"]);
 
   return (
-    <section id="process" ref={sectionRef} className="relative h-[300vh]">
+    <section ref={sectionRef} className="relative h-[300vh]">
       {/* ── Sticky Viewport ── */}
-      <div className="sticky top-0 h-screen overflow-hidden bg-[#f8f9fa]">
+      <div id="process" className="sticky top-0 h-screen overflow-hidden bg-[#f8f9fa]">
         <MicroGrid />
 
         {/* Section label */}

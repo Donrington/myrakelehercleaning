@@ -37,10 +37,9 @@ h4, h5, h6 {
   font-family: var(--font-orbitron), monospace;
 }
 
-/* Smooth scrolling + block horizontal overflow at the root */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-  overflow-x: hidden;
 }
 
 /* Selection color matching brand green */
