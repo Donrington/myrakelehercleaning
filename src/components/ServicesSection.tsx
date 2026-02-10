@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Leaf, Clock, Star, Droplets, Building2, Sparkles } from "lucide-react";
+import { Shield, Home, Star, Droplets, HardHat, Sparkles } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,7 +15,6 @@ export default function ServicesSection() {
   const ratingCounterRef = useRef<HTMLDivElement>(null);
   const pathogenCounterRef = useRef<HTMLDivElement>(null);
 
-  // State for counter values
   const [ratingValue, setRatingValue] = useState(0);
   const [pathogenValue, setPathogenValue] = useState(0);
 
@@ -25,7 +24,6 @@ export default function ServicesSection() {
 
       const tiles = gridRef.current.querySelectorAll(".service-tile");
 
-      // Staggered entrance animation
       gsap.from(tiles, {
         scrollTrigger: {
           trigger: gridRef.current,
@@ -40,10 +38,8 @@ export default function ServicesSection() {
         ease: "power3.out",
       });
 
-      // Parallax Scroll Depth - Different speeds for different tiles
       tiles.forEach((tile, index) => {
         const speed = index % 3 === 0 ? -30 : index % 3 === 1 ? -50 : -40;
-
         gsap.to(tile, {
           scrollTrigger: {
             trigger: tile,
@@ -56,7 +52,6 @@ export default function ServicesSection() {
         });
       });
 
-      // Counter Animation for 5.0 Stars
       if (ratingCounterRef.current) {
         gsap.to(
           { value: 0 },
@@ -76,7 +71,6 @@ export default function ServicesSection() {
         );
       }
 
-      // Counter Animation for 99.9%
       if (pathogenCounterRef.current) {
         gsap.to(
           { value: 0 },
@@ -117,7 +111,7 @@ export default function ServicesSection() {
         />
       </div>
 
-      {/* Dark Overlay to maintain readability */}
+      {/* Dark Overlay */}
       <div className="absolute inset-0 z-1 bg-gradient-to-b from-[#050505]/85 via-[#050505]/75 to-[#050505]/85" />
 
       {/* Film Grain Overlay */}
@@ -162,14 +156,15 @@ export default function ServicesSection() {
           </div>
 
           <h2 className="text-4xl font-extrabold leading-tight text-[#f2f2f2] md:text-5xl lg:text-6xl">
-            Precision.{" "}
-            <span className="text-[#55A53B]">Purity.</span>
+            Every Space.{" "}
+            <span className="text-[#55A53B]">Every Standard.</span>
             <br />
-            Perfection.
+            Spotless.
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#a0a0a0]">
-            Beyond cleaning—we curate environments where hygiene meets luxury,
+            From post-construction dust to stubborn carpet fibres — we handle
+            every scale of clean,
             <br className="hidden md:block" />
             backed by eco-certified protocols and obsessive attention to detail.
           </p>
@@ -180,138 +175,132 @@ export default function ServicesSection() {
           ref={gridRef}
           className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-12 lg:gap-6"
         >
-          {/* T-01: Hero Tile - Sanctuary Restoration */}
+          {/* T-01: Hero Tile — Post Construction Cleaning */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-8 backdrop-blur-[40px] md:col-span-2 lg:col-span-8 lg:row-span-2 lg:p-12">
-            {/* Border Light Sweep */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
-
-            {/* Gradient Overlay for Depth */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#55A53B]/5 via-transparent to-transparent opacity-0 transition-opacity duration-700 group-hover:opacity-100" />
 
             <div className="relative z-10 flex h-full flex-col justify-between">
               <div>
                 <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-[#55A53B]/10 px-3 py-1">
-                  <Droplets className="h-4 w-4 text-[#55A53B]" />
+                  <HardHat className="h-4 w-4 text-[#55A53B]" />
                   <span className="text-xs font-semibold tracking-wide text-[#55A53B] uppercase">
                     Flagship Service
                   </span>
                 </div>
 
                 <h3 className="mb-4 text-3xl font-bold leading-tight text-[#f2f2f2] lg:text-5xl">
-                  Sanctuary
+                  Post Construction
                   <br />
-                  Restoration
+                  Cleaning
                 </h3>
 
                 <p className="mb-6 max-w-lg text-base leading-relaxed text-[#a0a0a0] lg:text-lg">
-                  Erase the humidity. Reset the atmosphere. A home that breathes
-                  as deeply as you do. Our flagship deep purification protocol
-                  removes allergens, mold, and environmental stress.
+                  Remove dust, paint residue, debris, and chemical deposits left
+                  by contractors. We transform raw construction into a liveable,
+                  breathable space — polished and ready for occupancy.
                 </p>
               </div>
 
               <div className="flex flex-wrap gap-2">
                 <span className="rounded-full border border-[#55A53B]/20 bg-[#55A53B]/5 px-4 py-2 text-sm text-[#55A53B]">
-                  HEPA-13 Filtration
+                  Debris Removal
                 </span>
                 <span className="rounded-full border border-[#55A53B]/20 bg-[#55A53B]/5 px-4 py-2 text-sm text-[#55A53B]">
-                  Humidity Control
+                  Surface Decontamination
                 </span>
                 <span className="rounded-full border border-[#55A53B]/20 bg-[#55A53B]/5 px-4 py-2 text-sm text-[#55A53B]">
-                  Allergen Removal
+                  Final Inspection Ready
                 </span>
               </div>
             </div>
           </div>
 
-          {/* T-02: Feature Tile - Biosphere Safe */}
+          {/* T-02: Fumigation / Pest Control */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px] md:col-span-1 lg:col-span-4">
-            {/* Border Light Sweep */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
 
             <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#55A53B]/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#55A53B]/20 group-hover:shadow-[0_0_40px_rgba(85,165,59,0.3)]">
-                <Leaf className="h-8 w-8 text-[#55A53B]" />
+                <Shield className="h-8 w-8 text-[#55A53B]" />
               </div>
 
               <h4 className="mb-2 text-xl font-bold text-[#f2f2f2]">
-                Biosphere Safe
+                Fumigation &<br />Pest Control
               </h4>
 
               <p className="text-sm leading-relaxed text-[#a0a0a0]">
-                Hospital-grade sanitation.
+                Eco-safe treatments.
                 <br />
-                100% eco-certified.
+                Guaranteed pest-free.
               </p>
             </div>
           </div>
 
-          {/* T-03: Feature Tile - 24/7 Availability */}
+          {/* T-03: Residential / Office Cleaning */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px] md:col-span-1 lg:col-span-4">
-            {/* Border Light Sweep */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
 
             <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#55A53B]/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#55A53B]/20 group-hover:shadow-[0_0_40px_rgba(85,165,59,0.3)]">
-                <Clock className="h-8 w-8 text-[#55A53B]" />
+                <Home className="h-8 w-8 text-[#55A53B]" />
               </div>
 
               <h4 className="mb-2 text-5xl font-extrabold tracking-tighter text-[#f2f2f2] transition-all duration-500 group-hover:text-[#55A53B]">
-                24/7
+                Homes
               </h4>
 
               <p className="text-sm leading-relaxed text-[#a0a0a0]">
-                Emergency response.
+                Residential & office.
                 <br />
                 Flexible scheduling.
               </p>
             </div>
           </div>
 
-          {/* T-04: Secondary Tile - Architectural Clarity */}
+          {/* T-04: Deep Cleaning */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-8 backdrop-blur-[40px] md:col-span-2 lg:col-span-6">
-            {/* Border Light Sweep */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
 
             <div className="relative z-10">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1">
-                <Building2 className="h-4 w-4 text-[#55A53B]" />
+                <Droplets className="h-4 w-4 text-[#55A53B]" />
                 <span className="text-xs font-semibold tracking-wide text-white/60 uppercase">
-                  Exterior & Windows
+                  Full-Room Protocol
                 </span>
               </div>
 
               <h3 className="mb-3 text-2xl font-bold text-[#f2f2f2] lg:text-3xl">
-                Architectural Clarity
+                Deep Cleaning
               </h3>
 
               <p className="mb-4 text-sm leading-relaxed text-[#a0a0a0]">
-                Salt and storm residue removed. Restore the prism through which
-                you view the coast. Specialized pressure washing, window glazing,
-                and coastal protection.
+                Surface-to-surface purification of every room. Tiles, grout
+                lines, appliances, and fixtures treated with eco-certified
+                products to eliminate bacteria, grime, and allergens at the
+                root.
               </p>
 
-              <div className="flex gap-2 text-xs text-[#55A53B]">
-                <span>Salt Removal</span>
+              <div className="flex flex-wrap gap-2 text-xs text-[#55A53B]">
+                <span>Tile & Grout</span>
                 <span className="text-white/20">•</span>
-                <span>Mold Remediation</span>
+                <span>Appliances</span>
                 <span className="text-white/20">•</span>
-                <span>Hurricane Recovery</span>
+                <span>Allergen Removal</span>
               </div>
             </div>
           </div>
 
-          {/* T-05: Data Tile - 5.0 Stars with Counter */}
+          {/* T-05: Data Tile — 5.0 Stars */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-gradient-to-br from-[#55A53B]/10 to-[#2d5c28]/10 p-6 backdrop-blur-[40px] md:col-span-1 lg:col-span-3">
-            {/* Border Light Sweep */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
@@ -321,24 +310,20 @@ export default function ServicesSection() {
               className="relative z-10 flex h-full flex-col items-center justify-center text-center"
             >
               <Star className="mb-3 h-10 w-10 fill-[#55A53B] text-[#55A53B]" />
-
               <div className="mb-1 text-5xl font-extrabold text-[#f2f2f2]">
                 {ratingValue.toFixed(1)}
               </div>
-
               <p className="mb-2 text-xs font-semibold tracking-wider text-[#55A53B] uppercase">
                 Perfect Rating
               </p>
-
               <p className="text-xs text-[#a0a0a0]">
                 500+ Google Reviews
               </p>
             </div>
           </div>
 
-          {/* T-06: Data Tile - 99.9% Pathogen Free with Counter */}
+          {/* T-06: Data Tile — 99.9% Pathogen Free */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px] md:col-span-1 lg:col-span-3">
-            {/* Border Light Sweep */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
@@ -350,18 +335,16 @@ export default function ServicesSection() {
               <div className="mb-1 text-5xl font-extrabold text-[#f2f2f2]">
                 {pathogenValue.toFixed(1)}%
               </div>
-
               <p className="mb-2 text-xs font-semibold tracking-wider text-[#55A53B] uppercase">
                 Pathogen Free
               </p>
-
               <p className="text-xs text-[#a0a0a0]">
                 Certified Lab-Tested Results
               </p>
             </div>
           </div>
 
-          {/* T-07: Action Tile - Initiate Service */}
+          {/* T-07: Action Tile */}
           <div className="service-tile group relative overflow-hidden rounded-3xl bg-[#55A53B] p-8 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(85,165,59,0.4)] md:col-span-2 lg:col-span-12">
             <div className="relative z-10 flex flex-col items-center justify-center text-center md:flex-row md:justify-between md:text-left">
               <div>
@@ -381,7 +364,6 @@ export default function ServicesSection() {
               </a>
             </div>
 
-            {/* Ripple Effect Container */}
             <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-3xl">
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
             </div>
@@ -390,57 +372,54 @@ export default function ServicesSection() {
 
         {/* Additional Services Grid */}
         <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3 lg:gap-6">
-          {/* Corporate Equilibrium */}
+          {/* Carpet Cleaning */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px]">
-            {/* Border Light Sweep */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
 
             <div className="relative z-10">
               <h4 className="mb-2 text-lg font-bold text-[#f2f2f2]">
-                Corporate Equilibrium
+                Carpet Cleaning
               </h4>
               <p className="mb-3 text-sm leading-relaxed text-[#a0a0a0]">
-                A workspace sanitized to clinical standards, curated to executive expectations.
+                Hot-water extraction and dry-foam treatment restore fibres to factory-fresh condition — stains, odours, and allergens eliminated.
               </p>
-              <span className="text-xs text-[#55A53B]">Commercial Services</span>
+              <span className="text-xs text-[#55A53B]">Stain & Odour Removal</span>
             </div>
           </div>
 
-          {/* Ambient Maintenance */}
+          {/* Residential / Office Cleaning */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px]">
-            {/* Border Light Sweep */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
 
             <div className="relative z-10">
               <h4 className="mb-2 text-lg font-bold text-[#f2f2f2]">
-                Ambient Maintenance
+                Residential & Office Cleaning
               </h4>
               <p className="mb-3 text-sm leading-relaxed text-[#a0a0a0]">
-                Invisible curation. We maintain the baseline of perfection while you sleep.
+                Routine or one-time cleans for homes, condos, and workspaces. Maintained to a standard your guests and colleagues will notice.
               </p>
               <span className="text-xs text-[#55A53B]">Recurring Service</span>
             </div>
           </div>
 
-          {/* The Reveal Protocol */}
+          {/* Move-In / Move-Out */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px]">
-            {/* Border Light Sweep */}
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
 
             <div className="relative z-10">
               <h4 className="mb-2 text-lg font-bold text-[#f2f2f2]">
-                The Reveal Protocol
+                Move-In / Move-Out
               </h4>
               <p className="mb-3 text-sm leading-relaxed text-[#a0a0a0]">
-                Transforming the chaos of construction into the serenity of completion.
+                Full top-to-bottom reset between tenancies. Leave the old space spotless and enter the new one with zero trace of the previous occupant.
               </p>
-              <span className="text-xs text-[#55A53B]">Post-Construction</span>
+              <span className="text-xs text-[#55A53B]">Tenancy Turnover</span>
             </div>
           </div>
         </div>
