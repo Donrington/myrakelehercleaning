@@ -31,6 +31,7 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://myrakelehercleaning.com"),
   title: "Myra Keleher Cleaning Agency | Premium Cleaning Services — Florida Statewide",
   description:
     "Myra Keleher is a premium cleaning agency serving clients across Florida. From post-construction deep cleans to sanctuary restoration — eco-certified, meticulous, and reliable.",
