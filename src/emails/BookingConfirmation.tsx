@@ -68,7 +68,7 @@ export default function BookingConfirmation({
             {/* ── Logo ── */}
             <Section style={{ textAlign: "center", paddingBottom: "24px" }}>
               <Img
-                src={`${baseUrl}/images/MK_Primary_light.png`}
+                src={`${baseUrl}/images/logo.png`}
                 alt="Myra Keleher"
                 width="140"
                 height="auto"

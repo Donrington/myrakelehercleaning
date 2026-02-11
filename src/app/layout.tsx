@@ -31,9 +31,28 @@ const orbitron = Orbitron({
 });
 
 export const metadata: Metadata = {
-  title: "Myra Keleher Cleaning Agency | Premium Home Cleaning in Florida",
+  title: "Myra Keleher Cleaning Agency | Premium Cleaning Services — Florida Statewide",
   description:
-    "Myra Keleher is a premium cleaning collective that turns chaotic spaces into pristine sanctuaries. Eco-friendly, meticulous, and reliable.",
+    "Myra Keleher is a premium cleaning agency serving clients across Florida. From post-construction deep cleans to sanctuary restoration — eco-certified, meticulous, and reliable.",
+
+  keywords: [
+    "cleaning agency Florida",
+    "professional cleaning services Florida",
+    "post construction cleaning Florida",
+    "deep cleaning Florida",
+    "residential cleaning Florida",
+    "office cleaning Florida",
+    "carpet cleaning Florida",
+    "fumigation pest control Florida",
+    "move in move out cleaning Florida",
+    "Myra Keleher cleaning",
+    "Florida statewide cleaning service",
+  ],
+
+  // ── Canonical URL ────────────────────────────────────────────────────────
+  alternates: {
+    canonical: "https://myrakeleher.com",
+  },
 
   // ── Favicon / App icons ──────────────────────────────────────────────────
   icons: {
@@ -52,15 +71,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://myrakeleher.com",
     siteName: "Myra Keleher Cleaning Agency",
-    title: "Myra Keleher | Premium Home Cleaning in Florida",
+    title: "Myra Keleher | Premium Cleaning Services — Florida Statewide",
     description:
-      "Turn chaotic spaces into pristine sanctuaries. Eco-friendly, meticulous, and reliable cleaning services across Naples, Orlando, Miami & Tampa.",
+      "Turn chaotic spaces into pristine sanctuaries. Eco-certified cleaning services available across Florida — residential, commercial, post-construction & more.",
     images: [
       {
         url: "/images/MK_Primary_light.png",
         width: 1200,
         height: 630,
-        alt: "Myra Keleher — Premium Cleaning Services",
+        alt: "Myra Keleher — Premium Cleaning Services, Florida Statewide",
       },
     ],
   },
@@ -68,9 +87,9 @@ export const metadata: Metadata = {
   // ── Twitter / X Card ────────────────────────────────────────────────────
   twitter: {
     card: "summary_large_image",
-    title: "Myra Keleher | Premium Home Cleaning in Florida",
+    title: "Myra Keleher | Premium Cleaning Services — Florida Statewide",
     description:
-      "Turn chaotic spaces into pristine sanctuaries. Eco-friendly, meticulous, and reliable.",
+      "Eco-certified, meticulous cleaning services across Florida. Post-construction, deep clean, carpet, fumigation & more.",
     images: ["/images/MK_Primary_light.png"],
   },
 };
