@@ -3,24 +3,27 @@ import { Resend } from "resend";
 import { render } from "@react-email/components";
 import BookingConfirmation from "@/emails/BookingConfirmation";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
-const NOTIFY_EMAIL  = process.env.NOTIFY_EMAIL  ?? "myra@myrakeleher.com";
-const BASE_URL      = process.env.NEXT_PUBLIC_BASE_URL ?? "https://myrakeleher.com";
+const NOTIFY_EMAIL = "myrakyle2580@gmail.com";
+const BASE_URL     = process.env.NEXT_PUBLIC_BASE_URL ?? "https://myrakeleher.com";
 
 // Map form values to readable labels
 const SERVICE_LABELS: Record<string, string> = {
-  "sanctuary-restoration":  "Sanctuary Restoration",
-  "post-construction":      "Post Construction Cleaning",
-  "fumigation-pest-control":"Fumigation & Pest Control",
-  "residential-office":     "Residential / Office Cleaning",
-  "deep-cleaning":          "Deep Cleaning",
-  "carpet-cleaning":        "Carpet Cleaning",
-  "move-in-out":            "Move-In / Move-Out",
-  "others":                 "Others / General Enquiry",
+  "sanctuary-restoration":   "Sanctuary Restoration",
+  "post-construction":       "Post Construction Cleaning",
+  "fumigation-pest-control": "Fumigation & Pest Control",
+  "residential-office":      "Residential / Office Cleaning",
+  "deep-cleaning":           "Deep Cleaning",
+  "carpet-cleaning":         "Carpet Cleaning",
+  "move-in-out":             "Move-In / Move-Out",
+  "others":                  "Others / General Enquiry",
 };
 
+export const dynamic = "force-dynamic";
+
 export async function POST(req: NextRequest) {
+  // Initialise Resend inside the handler — avoids build-time missing key error
+  const resend = new Resend(process.env.RESEND_API_KEY);
+
   try {
     const { name, contact, service, details } = await req.json();
 
@@ -36,7 +39,7 @@ export async function POST(req: NextRequest) {
       year: "numeric", month: "long", day: "numeric",
     });
 
-    // ── Render both email templates ────────────────────────────────────────
+    // ── Render confirmation template ───────────────────────────────────────
     const confirmationHtml = await render(
       BookingConfirmation({
         clientName:  name,
@@ -48,7 +51,7 @@ export async function POST(req: NextRequest) {
       })
     );
 
-    // Internal notification email (plain but informative)
+    // ── Internal notification (styled table) ──────────────────────────────
     const notificationHtml = `
       <div style="font-family:monospace;background:#050505;color:#f2f2f2;padding:32px;border-radius:12px;max-width:600px;margin:0 auto;">
         <p style="color:#55A53B;font-size:11px;letter-spacing:0.3em;text-transform:uppercase;margin:0 0 16px;">● New Booking Request</p>
@@ -76,7 +79,7 @@ export async function POST(req: NextRequest) {
       html:    notificationHtml,
     });
 
-    // ── 2. Send confirmation to client (only if contact looks like an email) ─
+    // ── 2. Confirmation to client (only if contact is an email) ───────────
     const isEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(contact);
     if (isEmail) {
       await resend.emails.send({
