@@ -228,11 +228,11 @@ export default function FooterSection() {
             className="text-[10px] font-medium tracking-[0.22em] text-white/60 uppercase"
             style={{ fontFamily: "var(--font-orbitron), monospace" }}
           >
-            © 2025 Myra Keleher
+            © 2026 Myra Keleher
           </p>
 
-          {/* Centre — legal links */}
-          <div className="flex items-center gap-5">
+          {/* Centre — legal links (reserved for future use) */}
+          {/* <div className="flex items-center gap-5">
             {["Privacy Policy", "Terms of Service"].map((label) => (
               <a
                 key={label}
@@ -243,7 +243,8 @@ export default function FooterSection() {
                 {label}
               </a>
             ))}
-          </div>
+          </div> */}
+          <div />
 
           {/* Right — socials */}
           <div className="flex items-center gap-4">
