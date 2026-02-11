@@ -1,22 +1,17 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Shield, Home, Star, Droplets, Wind, Sparkles, HardHat } from "lucide-react";
+import { Shield, Leaf, BadgeCheck, Clock, Droplets, Wind, Sparkles, HardHat } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function ServicesSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const gridRef = useRef<HTMLDivElement>(null);
-  const ratingCounterRef = useRef<HTMLDivElement>(null);
-  const pathogenCounterRef = useRef<HTMLDivElement>(null);
-
-  const [ratingValue, setRatingValue] = useState(0);
-  const [pathogenValue, setPathogenValue] = useState(0);
 
   useGSAP(
     () => {
@@ -52,43 +47,6 @@ export default function ServicesSection() {
         });
       });
 
-      if (ratingCounterRef.current) {
-        gsap.to(
-          { value: 0 },
-          {
-            value: 4.7,
-            duration: 2,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: ratingCounterRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none",
-            },
-            onUpdate: function () {
-              setRatingValue(Number(this.targets()[0].value.toFixed(1)));
-            },
-          }
-        );
-      }
-
-      if (pathogenCounterRef.current) {
-        gsap.to(
-          { value: 0 },
-          {
-            value: 99.9,
-            duration: 2.5,
-            ease: "power2.out",
-            scrollTrigger: {
-              trigger: pathogenCounterRef.current,
-              start: "top 80%",
-              toggleActions: "play none none none",
-            },
-            onUpdate: function () {
-              setPathogenValue(Number(this.targets()[0].value.toFixed(1)));
-            },
-          }
-        );
-      }
     },
     { scope: sectionRef }
   );
@@ -241,7 +199,7 @@ export default function ServicesSection() {
             </div>
           </div>
 
-          {/* T-03: Residential / Office Cleaning */}
+          {/* T-03: Eco-Safe Protocols */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px] md:col-span-1 lg:col-span-4">
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
@@ -249,17 +207,18 @@ export default function ServicesSection() {
 
             <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
               <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-[#55A53B]/10 transition-all duration-500 group-hover:scale-110 group-hover:bg-[#55A53B]/20 group-hover:shadow-[0_0_40px_rgba(85,165,59,0.3)]">
-                <Home className="h-8 w-8 text-[#55A53B]" />
+                <Leaf className="h-8 w-8 text-[#55A53B]" />
               </div>
 
-              <h4 className="mb-2 text-5xl font-extrabold tracking-tighter text-[#f2f2f2] transition-all duration-500 group-hover:text-[#55A53B]">
-                Homes
+              <h4 className="mb-2 text-xl font-bold text-[#f2f2f2]">
+                Eco-Safe
+                <br />Protocols
               </h4>
 
               <p className="text-sm leading-relaxed text-[#a0a0a0]">
-                Residential & office.
+                Biodegradable products.
                 <br />
-                Flexible scheduling.
+                Safe for children & pets.
               </p>
             </div>
           </div>
@@ -299,47 +258,36 @@ export default function ServicesSection() {
             </div>
           </div>
 
-          {/* T-05: Data Tile — 5.0 Stars */}
+          {/* T-05: Licensed & Insured */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-gradient-to-br from-[#55A53B]/10 to-[#2d5c28]/10 p-6 backdrop-blur-[40px] md:col-span-1 lg:col-span-3">
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
 
-            <div
-              ref={ratingCounterRef}
-              className="relative z-10 flex h-full flex-col items-center justify-center text-center"
-            >
-              <Star className="mb-3 h-10 w-10 fill-[#55A53B] text-[#55A53B]" />
-              <div className="mb-1 text-5xl font-extrabold text-[#f2f2f2]">
-                {ratingValue.toFixed(1)}
-              </div>
-              <p className="mb-2 text-xs font-semibold tracking-wider text-[#55A53B] uppercase">
-                Perfect Rating
+            <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
+              <BadgeCheck className="mb-3 h-10 w-10 text-[#55A53B]" />
+              <p className="mb-1 text-sm font-bold text-[#f2f2f2]">
+                Licensed &<br />Insured
               </p>
               <p className="text-xs text-[#a0a0a0]">
-                Trusted Across Florida
+                Fully covered on every job
               </p>
             </div>
           </div>
 
-          {/* T-06: Data Tile — 99.9% Pathogen Free */}
+          {/* T-06: Same-Day Booking */}
           <div className="service-tile group relative overflow-hidden rounded-3xl border border-white/5 bg-[#0f0f0f]/60 p-6 backdrop-blur-[40px] md:col-span-1 lg:col-span-3">
             <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 transition-opacity duration-500 group-hover:opacity-100">
               <div className="border-sweep absolute inset-0 rounded-3xl" />
             </div>
 
-            <div
-              ref={pathogenCounterRef}
-              className="relative z-10 flex h-full flex-col items-center justify-center text-center"
-            >
-              <div className="mb-1 text-5xl font-extrabold text-[#f2f2f2]">
-                {pathogenValue.toFixed(1)}%
-              </div>
-              <p className="mb-2 text-xs font-semibold tracking-wider text-[#55A53B] uppercase">
-                Pathogen Free
+            <div className="relative z-10 flex h-full flex-col items-center justify-center text-center">
+              <Clock className="mb-3 h-10 w-10 text-[#55A53B]" />
+              <p className="mb-1 text-sm font-bold text-[#f2f2f2]">
+                Same-Day<br />Availability
               </p>
               <p className="text-xs text-[#a0a0a0]">
-                Certified Lab-Tested Results
+                Book before noon, cleaned today
               </p>
             </div>
           </div>

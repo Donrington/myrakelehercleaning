@@ -149,13 +149,20 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
   };
 
   // ── Submit ────────────────────────────────────────────────────────────────
-  const onSubmit = async (_data: FormValues) => {
+  const onSubmit = async (data: FormValues) => {
     setPhase("loading");
-    // Simulate API call
-    await new Promise((r) => setTimeout(r, 1800));
-    setPhase("success");
-    // Auto-close after success display
-    setTimeout(() => handleClose(), 2800);
+    try {
+      const res = await fetch("/api/send", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Send failed");
+      setPhase("success");
+      setTimeout(() => handleClose(), 2800);
+    } catch {
+      setPhase("form");
+    }
   };
 
   // ── Input shared styles ───────────────────────────────────────────────────
