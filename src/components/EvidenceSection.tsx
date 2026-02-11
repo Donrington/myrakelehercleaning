@@ -398,8 +398,7 @@ export default function EvidenceSection() {
     <section
       ref={sectionRef}
       id="evidence"
-      className="relative h-screen w-full overflow-hidden"
-      style={{ cursor: "none" }}
+      className="relative h-screen w-full overflow-hidden md:[cursor:none]"
     >
       {/* ══ Entry fade from black ══ */}
       <motion.div
@@ -627,7 +626,7 @@ export default function EvidenceSection() {
       {/* ══ Custom cursor ring ══ */}
       <div
         ref={cursorRef}
-        className="pointer-events-none fixed z-[9999]"
+        className="pointer-events-none fixed z-[9999] hidden md:block"
         style={{
           width: 56,
           height: 56,

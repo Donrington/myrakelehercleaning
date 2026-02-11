@@ -296,14 +296,29 @@ export default function BookingModal({ isOpen, onClose }: BookingModalProps) {
                             <option value="" className="bg-[#0a0a0a] text-white/60">
                               Select a service…
                             </option>
-                            <option value="deep-clean" className="bg-[#0a0a0a] text-white">
-                              Deep Clean
+                            <option value="sanctuary-restoration" className="bg-[#0a0a0a] text-white">
+                              Sanctuary Restoration
                             </option>
-                            <option value="recurring" className="bg-[#0a0a0a] text-white">
-                              Recurring
+                            <option value="post-construction" className="bg-[#0a0a0a] text-white">
+                              Post Construction Cleaning
+                            </option>
+                            <option value="fumigation-pest-control" className="bg-[#0a0a0a] text-white">
+                              Fumigation & Pest Control
+                            </option>
+                            <option value="residential-office" className="bg-[#0a0a0a] text-white">
+                              Residential / Office Cleaning
+                            </option>
+                            <option value="deep-cleaning" className="bg-[#0a0a0a] text-white">
+                              Deep Cleaning
+                            </option>
+                            <option value="carpet-cleaning" className="bg-[#0a0a0a] text-white">
+                              Carpet Cleaning
                             </option>
                             <option value="move-in-out" className="bg-[#0a0a0a] text-white">
                               Move-In / Move-Out
+                            </option>
+                            <option value="others" className="bg-[#0a0a0a] text-white">
+                              Others
                             </option>
                           </select>
                         </Field>
