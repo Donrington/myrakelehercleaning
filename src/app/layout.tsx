@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 
   // ── Canonical URL ────────────────────────────────────────────────────────
   alternates: {
-    canonical: "https://myrakeleher.com",
+    canonical: "https://myrakelehercleaning.com",
   },
 
   // ── Favicon / App icons ──────────────────────────────────────────────────
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://myrakeleher.com",
+    url: "https://myrakelehercleaning.com",
     siteName: "Myra Keleher Cleaning Agency",
     title: "Myra Keleher | Premium Cleaning Services — Florida Statewide",
     description:

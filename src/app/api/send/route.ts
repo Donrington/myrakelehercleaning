@@ -4,7 +4,7 @@ import { render } from "@react-email/components";
 import BookingConfirmation from "@/emails/BookingConfirmation";
 
 const NOTIFY_EMAIL = "myrakyle2580@gmail.com";
-const BASE_URL     = process.env.NEXT_PUBLIC_BASE_URL ?? "https://myrakeleher.com";
+const BASE_URL     = process.env.NEXT_PUBLIC_BASE_URL ?? "https://myrakelehercleaning.com";
 
 // Map form values to readable labels
 const SERVICE_LABELS: Record<string, string> = {
