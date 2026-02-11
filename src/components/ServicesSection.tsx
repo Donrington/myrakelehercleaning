@@ -56,7 +56,7 @@ export default function ServicesSection() {
         gsap.to(
           { value: 0 },
           {
-            value: 5.0,
+            value: 4.7,
             duration: 2,
             ease: "power2.out",
             scrollTrigger: {

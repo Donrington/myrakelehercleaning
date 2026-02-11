@@ -448,7 +448,7 @@ export default function AboutSection() {
               </span>
             </div>
             <div className="flex divide-x divide-[#e5e5e5]">
-              <CountUpStat end={250} suffix="+"  label="Homes Cleaned" />
+              <CountUpStat end={63} suffix="+"  label="Homes Cleaned" />
               <CountUpStat end={99}  suffix="%"  label="Satisfaction"  />
               <CountUpStat end={100} suffix="%"  label="Eco-Friendly"  />
             </div>

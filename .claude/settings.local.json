@@ -9,7 +9,12 @@
       "Bash(npm run build:*)",
       "Bash(npm run dev:*)",
       "Bash(dir:*)",
-      "Bash(node -e:*)"
+      "Bash(node -e:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFix mobile horizontal overflow and wire navbar section links\n\n- Add overflow-x: hidden to html and body in globals.css to block horizontal scroll on all screens\n- Add overflow-hidden to AboutSection which was the only section missing it\n- Add overflowX: clip to ProcessSection outer section to contain the 300vw rail without breaking sticky positioning\n- Update navbar links to match actual section IDs: About \\(#about\\), Services \\(#services\\), Process \\(#process\\), Reviews \\(#evidence\\)\n- Add id attributes to AboutSection, ServicesSection, and ProcessSection\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nFix ProcessSection sticky scroll broken by overflow-x: clip\n\nRemoved overflowX: clip from the outer section — it was disrupting the\nsticky scroll container even though clip is theoretically safe. The\nglobal overflow-x: hidden on html/body is sufficient to prevent\nhorizontal overflow without touching the sticky ancestor.\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)"
     ]
   }
 }
